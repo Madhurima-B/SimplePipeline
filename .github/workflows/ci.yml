@@ -24,10 +24,8 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     
-    - name: Build and push Docker image
-      uses: mr-smithers-excellent/docker-build-push@v4
+    - name: SonarQube Scan
+      uses: monstar-lab-oss/sonarqube-github-action@v1.0.1
       with:
-        image: nidayra/demoapp
-        registry: docker.io
-        username: ${{ secrets.DOCKER_USERNAME }}
-        password: ${{ secrets.DOCKER_PASSWORD }}
+        url: ${{ secrets.SONARQUBE_HOST }}
+        token: ${{ secrets.SONARQUBE_TOKEN }}
