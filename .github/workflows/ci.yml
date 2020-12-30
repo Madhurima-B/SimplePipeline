@@ -25,9 +25,9 @@ jobs:
       run: mvn -B package --file pom.xml
 
      
+    - uses: actions/checkout@master
     - name: SonarQube Scan
-
-      uses: monstar-lab-oss/sonarqube-github-action@v1.0.1
+      uses: kitabisa/sonarqube-action@master
       with:
-        url: ${{ secrets.SONARQUBE_HOST }}
-        token: ${{ secrets.SONARQUBE_TOKEN }}
+        host: ${{ secrets.SONARQUBE_HOST }}
+        login: ${{ secrets.SONARQUBE_TOKEN }} 
