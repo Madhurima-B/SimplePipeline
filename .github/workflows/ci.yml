@@ -2,19 +2,14 @@
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
 name: Java CI with Maven
-
 on:
   push:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
-
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 1.8
@@ -24,10 +19,16 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
-     
-    - uses: actions/checkout@master
-    - name: SonarQube Scan
-      uses: kitabisa/sonarqube-action@master
-      with:
-        host: ${{ secrets.SONARQUBE_HOST }}
-        login: ${{ secrets.SONARQUBE_TOKEN }} 
+  sonarqube:
+    needs: build
+    name: sonarqube trigger
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo Should run sonarqube.
+
+  integrationTest:
+    needs: build
+    name: Integration Test
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo Should run integration tests.
