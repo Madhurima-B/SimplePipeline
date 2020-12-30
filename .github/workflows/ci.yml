@@ -27,7 +27,7 @@ jobs:
     - name: Build and push Docker image
       uses: mr-smithers-excellent/docker-build-push@v4
       with:
-        image: nidayra/simplepipeline
+        image: nidayra/demoapp
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
