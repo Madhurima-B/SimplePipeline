@@ -19,16 +19,44 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
-  sonarqube:
+  staticAnalysis:
     needs: build
     name: sonarqube trigger
     runs-on: ubuntu-latest
     steps:
       - run: echo Should run sonarqube.
 
-  integrationTest:
-    needs: sonarqube
-    name: Integration Test
+  UnitTesting:
+    needs: staticAnalysis
+    name: Unit Test
     runs-on: ubuntu-latest
     steps:
-      - run: echo Should run integration tests.
+      - run: echo Should run unit tests.
+
+  CodeCoverage:
+    needs: UnitTesting
+    name: Code Coverage
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo Should run code coverage.
+
+  War:
+    needs: CodeCoverage
+    name: war
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo Should run war.
+
+  ToArtifactory:
+    needs: War
+    name: To Artifactory
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo Should run artifactory
+
+  SmokeTest:
+    needs: War
+    name: Smoke Test
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo Should run tomcat
