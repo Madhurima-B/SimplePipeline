@@ -27,7 +27,7 @@ jobs:
       - run: echo Should run sonarqube.
 
   integrationTest:
-    needs: build
+    needs: sonarqube
     name: Integration Test
     runs-on: ubuntu-latest
     steps:
