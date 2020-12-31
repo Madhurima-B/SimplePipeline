@@ -63,7 +63,8 @@ jobs:
         uses: mikepenz/action-junit-report@v1
         with:
           report_paths: 'target/surefire-reports/*.xml'
-          github_token: ${{ secrets.GH_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
   CodeCoverage:
     needs: UnitTesting
