@@ -17,22 +17,13 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
-<<<<<<< HEAD
 			<version>4.0.1</version>
 
 		</dependency>
 	</dependencies>
 
-	
-</project>
-=======
-			<version>3.1.0</version>
-		
-		</dependency>
-	</dependencies>
 
   <build>
     <finalName>DemoPrj</finalName>
   </build>
 </project>
->>>>>>> 2e4196cb2eb16d14f305519bb3fb59d040b16c56
