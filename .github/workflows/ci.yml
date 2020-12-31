@@ -21,7 +21,7 @@ jobs:
 
   staticAnalysis:
     needs: build
-    name: sonarqube trigger
+    name: sonarcloud trigger
     runs-on: ubuntu-latest
     steps:
       - run: echo Should run sonarqube.
