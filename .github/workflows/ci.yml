@@ -55,6 +55,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo Should run unit tests.
+      - name: Checkout Code
+        uses: actions/checkout@v1
+      - name: Build and Run Tests
+        run: # execute your tests generating test results
+      - name: Publish Test Report
+        uses: mikepenz/action-junit-report@v1
+        with:
+          report_paths: 'target/surefire-reports/*.xml'
+          github_token: ${{ secrets.GH_TOKEN }}
 
   CodeCoverage:
     needs: UnitTesting
