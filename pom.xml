@@ -1,17 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>Nida</groupId>
-	<artifactId>calculator</artifactId>
-	<packaging>war</packaging>
 
-	<version>0.0.1-SNAPSHOT</version>
-	<name>calculator</name>
-	<url>http://calc</url>
-
-	<dependencies>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mavenprj.app</groupId>
+  <artifactId>DemoPrj</artifactId>
+  <packaging>war</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>DemoPrj Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -20,6 +17,7 @@
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
+<<<<<<< HEAD
 			<version>4.0.1</version>
 
 		</dependency>
@@ -27,3 +25,14 @@
 
 	
 </project>
+=======
+			<version>3.1.0</version>
+		
+		</dependency>
+	</dependencies>
+
+  <build>
+    <finalName>DemoPrj</finalName>
+  </build>
+</project>
+>>>>>>> 2e4196cb2eb16d14f305519bb3fb59d040b16c56
