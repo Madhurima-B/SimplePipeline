@@ -21,7 +21,11 @@
 
 		</dependency>
 	</dependencies>
-
+	<properties>
+	  <sonar.projectKey>NidaAP_SimplePipeline</sonar.projectKey>
+	  <sonar.organization>nidaap</sonar.organization>
+	  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+	</properties>
 
   <build>
     <finalName>DemoPrj</finalName>
