@@ -71,7 +71,7 @@ jobs:
     name: Code Coverage
     runs-on: ubuntu-latest
     steps:
-      - run: mvn  org.jacoco:jacoco-maven-plugin:prepare-agent install
+      - run: mvn jacoco:report
        
       
 
