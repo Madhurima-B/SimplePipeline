@@ -72,7 +72,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo should run code coverage
-       
+      
+      - uses: 5monkeys/cobertura-action@master
+        with:
+          path: src/test.xml
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          minimum_coverage: 75
       
 
 
